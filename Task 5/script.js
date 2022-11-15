@@ -21,4 +21,18 @@ const users = [
 ];
 
 
+const dogOwners = filterDogOwners(users);
+const adults = filterAdults(users);
 
+/**
+ * Functions
+ */
+function filterDogOwners(arr) {
+  return arr.filter((obj) => obj.hasDog);
+}
+console.log("dogOwners ===", dogOwners);
+
+function filterAdults(arr) {
+  return arr.filter((obj) => obj.age >= 18);
+}
+console.log("adults ===", adults);
