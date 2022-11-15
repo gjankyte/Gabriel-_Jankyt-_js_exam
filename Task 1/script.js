@@ -8,3 +8,15 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: rezultatas turi būti matomas pateikus formą ir atvaizduojamas
 <div id="output"></div> viduje. Gautus atsakymus stilizuokite naudojant CSS;
 ------------------------------------------------------------------- */
+
+
+const inputEl = document.getElementById('search').value;
+const outputEl = document.getElementById('output');
+const submitBtn = document.getElementById('submit-btn');
+
+
+submitBtn.addEventListener('submit', (e) => {
+   const kgTolb = inputEl.value * 2.2046;
+    e.preventDefault()
+});
+
