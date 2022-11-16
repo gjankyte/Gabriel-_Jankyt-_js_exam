@@ -12,3 +12,23 @@ būti stilizuota su CSS ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = 'https://api.github.com/users';
+
+const showUsersBtn = document.getElementById("btn");
+const message = document.getElementById("message");
+
+showUsersBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    getData(ENDPOINT);
+    showUsersBtn.style.display = "none";
+    message.style.display = "none";
+  });
+
+  function getData(url) {
+    return fetch(url)
+      .then((resp) => resp.json())
+      .then((dataInJs) => {
+        generateCards(dataInJs, "output");
+      })
+      .catch((err) => console.warn("klaida", err));
+  }
+  
