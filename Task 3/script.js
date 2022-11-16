@@ -23,30 +23,12 @@ showUsersBtn.addEventListener("click", (e) => {
     message.style.display = "none";
   });
 
-  // functions - data and generating cards
-  
   function getData(url) {
     return fetch(url)
       .then((resp) => resp.json())
       .then((dataInJs) => {
         generateCards(dataInJs, "output");
       })
-      .catch((err) => console.warn("HUSTON WE HAVE A PROBLEM", err));
+      .catch((err) => console.warn("klaida", err));
   }
   
-  function generateCards(arr, elId) {
-    const dest = document.getElementById(elId);
-    if (!dest) throw "BIG PROBLEM";
-  
-    const htmlUsrArr = arr.map((p) => {
-      const articleEl = document.createElement("article");
-      articleEl.className = "card";
-      articleEl.innerHTML = `
-          <h3>${p.login}</h3>
-          <img src="${p.avatar_url}"></img>
-          `;
-      return articleEl;
-    });
-    console.log("htmlElsArr ===", htmlUsrArr);
-    htmlUsrArr.forEach((el) => dest.append(el));
-}

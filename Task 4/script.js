@@ -30,7 +30,7 @@ function crEl(tag, container, classEl, text){
 }
 
 
-function generateCards(obj) {
+function generateCards() {
 
-}
+};
 
